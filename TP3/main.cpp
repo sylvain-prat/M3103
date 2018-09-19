@@ -31,61 +31,40 @@ void ListeSimple (void)
 }// ListeSimple ()
 
 
-void ListeSimpleV2 ()
+void ListeSimpleLRU ()
 {
     cout << "ListeSimpleV2 : \n\n";
 
     CList<int> AList;
 
-    // Le dernier element cree est toujours le premier de la liste
-
-    for (unsigned i = 20; i; i -= 2) AList.AddAfter (AList.Begin (), i);
-    cout << "hfejkrhg " << endl;
-
+    // Le dernier element cree est toujours le premier de la liste    
     for (unsigned i (0); i < 5; ) {
         AList.push_front (i++);
     }
 
 
-
-    AList.Show ();
-//	AList.Show ();
-/*	int i;
-    cin >>i;
-    CNodeInt* ptr = AList.Find (i);
-    AList.Add (3*i, ptr);
     AList.Show ();
 
-    cout << ((ptr != NULL)?  " " : "non ") << "trouve" << endl;
-*/
-    //cout << "valeur trouvée" << ptr -> GetData () << endl;
+    cout << "0"<< endl;
+    AList.Find(0);
 
-    //delete AList;
-
-    /*CNodeInt* ptr = AList.Find (2);
-    cout << ((ptr != NULL)?  " " : "non ") << "trouve" << endl;
-    AList.Delete (ptr);
-    AList.Show ();*/
-
-    //AList.Delete (AList.Find (0));
-
-    AList.push_back (6);
-    AList.push_back (7);
-
-
-    AList.Delete (AList.Find (2));
-    AList.Delete (AList.Find (12));
-    AList.Delete (AList.Find (20));
     AList.Show ();
-    //delete ptr;
+
+    cout << "2"<< endl;
+    AList.Find(2);
+    AList.Show ();
+    cout << "8"<< endl;
+    AList.Find(8);
+    AList.Show ();
+
     cout << endl;
 
 }
 
-int main(int argc, char *argv[])
+int main (void)
 {
     std::cout << "Hello World!" << std::endl;
-    ListeSimple();
-    ListeSimpleV2 ();
+    /*   * / ListeSimple();    /*    */
+    ListeSimpleLRU ();
     return 0;
 }
